@@ -5,8 +5,18 @@ import sys
 from src.logger import logging
 
 
+# Function Definition to get error message with details of the error (file name and line number) when an error occurs in the program
 def get_error_message(error, error_detail: sys) -> str:
-    """Get error message"""
+    """
+    Get error message with details of the error.
+
+    Parameters:
+    error (Exception): The error that occurred.
+    error_detail (sys): The details of the error.
+
+    Returns:
+    str: A string containing the error message along with the file name and line number where the error occurred.
+    """
 
     _, _, tb = error_detail.exc_info()
 
@@ -21,9 +31,15 @@ def get_error_message(error, error_detail: sys) -> str:
     )
 
 
+# Custom Exception Handling Class Definition
 class CustomExceptionHandling(Exception):
+    """
+    Custom Exception Handling
 
-    """Custom Exception Handling"""
+    This class defines a custom exception that can be raised when an error occurs in the program.
+    It takes an error message and an error detail as input and returns a formatted error message
+    when the exception is raised.
+    """
 
     # Constructor
     def __init__(self, error_message, error_detail: sys):

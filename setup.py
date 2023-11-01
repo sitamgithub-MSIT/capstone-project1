@@ -6,7 +6,15 @@ HYPHEN_E_DOT = "-e ."
 
 
 def get_requirements(filename: str) -> list[str]:
-    """Get requirements from requirements.txt file"""
+    """
+    Get requirements from requirements.txt file
+
+    Args:
+    filename (str): The path to the requirements.txt file
+
+    Returns:
+    list[str]: A list of requirements
+    """
 
     requirements = []
 

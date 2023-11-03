@@ -1,11 +1,12 @@
 # Importing required libraries
 from setuptools import setup, find_packages
+from typing import List
 
 # Defining constants
 HYPHEN_E_DOT = "-e ."
 
 
-def get_requirements(filename: str) -> list[str]:
+def get_requirements(filename: str) -> List[str]:
     """
     Get requirements from requirements.txt file
 

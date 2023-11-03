@@ -10,7 +10,7 @@ from src.logger import logging
 
 
 # Function Definition to get error message with details of the error (file name and line number) when an error occurs in the program
-def get_error_message(error, error_detail: sys) -> str:
+def get_error_message(error, error_detail: sys):
     """
     Get error message with details of the error.
 
@@ -22,16 +22,12 @@ def get_error_message(error, error_detail: sys) -> str:
     str: A string containing the error message along with the file name and line number where the error occurred.
     """
 
-    _, _, tb = error_detail.exc_info()
+    _,_,exc_tb = error_detail.exc_info()
 
     # Get error details
-    file_name = tb.tb_frame.f_code.co_filename
-    line_number = tb.tb_lineno
-    string_error = str(error)
-
-    # Return error message
-    return "Error in python script name [{0}] line number [{1}] with error message [{2}]".format(
-        file_name, line_number, string_error
+    file_name = exc_tb.tb_frame.f_code.co_filename
+    return "Error occured in python script name [{0}] line number [{1}] error message[{2}]".format(
+        file_name, exc_tb.tb_lineno, str(error)
     )
 
 

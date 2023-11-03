@@ -4,10 +4,13 @@ import logging
 from datetime import datetime
 
 
-# Function Definition to log the errors and warnings in the logs directory of the project folder
 def create_logger():
     """
     Create logger for the program.
+
+    This function creates a logger to log the errors and warnings in the logs directory of the project folder.
+    It creates a logs directory if it doesn't exist and generates a log file with the current timestamp.
+    The log file path is then configured with the logging module.
     """
     # Create logs directory
     LOG_FILE = f"{datetime.now().strftime('%m-%d%Y-%H-%M-%S')}.log"

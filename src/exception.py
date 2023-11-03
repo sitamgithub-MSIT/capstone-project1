@@ -1,3 +1,7 @@
+"""
+This module defines a custom exception handling class and a function to get error message with details of the error.
+"""
+
 # Standard Library
 import sys
 

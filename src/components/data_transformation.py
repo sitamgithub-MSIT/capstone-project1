@@ -6,6 +6,7 @@ from dataclasses import dataclass
 import numpy as np
 import pandas as pd
 
+# 
 from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
 
@@ -83,15 +84,15 @@ class DataTransformation:
             logging.info(
                 "Train data and Test data read successfully from the source location"
             )
-
-            # Starting the data transformation process from here onwards and saving the preprocessor object for future use
             logging.info(
                 "Obtaining the preprocessor object for data transformation process"
             )
 
+            # Obtaining the preprocessor object
             preprocessing_obj = self.get_data_transformation_object()
             target_col = "charges"
 
+            # Splitting the train and test data into input features and target feature
             input_features_train_df = train_df.drop(target_col, axis=1)
             target_feature_train_df = train_df[target_col]
 
@@ -102,6 +103,7 @@ class DataTransformation:
                 "Fitting the preprocessor object on both train and test data sets"
             )
 
+            # Fitting the preprocessor object on both train and test data sets
             input_features_train_arr = preprocessing_obj.fit_transform(
                 input_features_train_df
             )
@@ -109,6 +111,7 @@ class DataTransformation:
                 input_features_test_df
             )
 
+            # Concatenating the input features and target feature
             train_arr = np.c_[
                 input_features_train_arr, np.array(target_feature_train_df)
             ]
@@ -116,17 +119,19 @@ class DataTransformation:
 
             logging.info("Saving the preprocessor object")
 
+            # Saving the preprocessor object
             saved_object(
                 file_path=self.transformation_config.preprocessor_obj_file_path,
                 obj=preprocessing_obj,
             )
 
+            # Returning the transformed train and test data arrays along with the file path of the saved preprocessor object
             return (
                 train_arr,
                 test_arr,
                 self.transformation_config.preprocessor_obj_file_path,
             )
 
+        # Handling the custom exceptions
         except Exception as e:
-            logging.error("Error occurred while initiating the data transformation")
-            CustomExceptionHandling(e)
+            raise CustomExceptionHandling(e, sys) from e

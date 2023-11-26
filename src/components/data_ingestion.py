@@ -46,14 +46,23 @@ class DataIngestion:
         Initiates the data ingestion process and returns the paths to the resulting train and test sets.
     """
 
-    # Constructor to initialize the class variables
     def __init__(self):
+        """
+        Constructor to initialize the class variables.
+        """
         self.ingestion_config = (
             DataIngestionConfig()
         )  # ingestionConfig is where data is stored
 
-    # Function to initiate the data ingestion process
     def initiate_data_ingestion(self):
+        """
+        Initiates the data ingestion process and returns the paths to the resulting train and test sets.
+
+        Returns
+        -------
+        tuple
+            A tuple containing the paths to the resulting train and test sets.
+        """
         logging.info(
             "data ingestion is started from the source location to the destination location"
         )
@@ -101,7 +110,6 @@ class DataIngestion:
             raise CustomExceptionHandling(e, sys) from e
 
 
-# Main function to initiate the data ingestion process
 if __name__ == "__main__":
     # Creating the object for the class and calling the function
     data_ingestion = DataIngestion()

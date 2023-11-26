@@ -111,6 +111,10 @@ class DataIngestion:
 
 
 if __name__ == "__main__":
-    # Creating the object for the class and calling the function
+    # Initiating the data ingestion process
     data_ingestion = DataIngestion()
-    data_ingestion.initiate_data_ingestion()
+    train_data, test_data = data_ingestion.initiate_data_ingestion()
+
+    # Initiating the data transformation process
+    data_transformation = DataTransformation()
+    train_arr, test_arr, _ = data_transformation.initiate_data_transformation(train_data, test_data)

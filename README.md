@@ -1,1 +1,1 @@
-# ML ZoomCamp Midterm Project
+# ML ZoomCamp Capstone Project 1

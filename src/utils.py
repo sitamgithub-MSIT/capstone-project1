@@ -34,3 +34,12 @@ def save_object(obj, file_path):
     except Exception as e:
         # Handling the exception
         raise CustomExceptionHandling(e, sys) from e
+
+
+def evaluate_model(model, X_test, y_test):
+    try:
+        pass
+
+    except Exception as e:
+        # Handling the exception
+        raise CustomExceptionHandling(e, sys) from e

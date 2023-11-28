@@ -6,6 +6,7 @@ import pickle
 import numpy as np
 import pandas as pd
 from sklearn.metrics import r2_score
+from sklearn.model_selection import GridSearchCV
 
 # Exception handling imports
 from src.exception import CustomExceptionHandling
@@ -21,7 +22,6 @@ def save_object(obj, file_path):
 
     Raises:
         CustomExceptionHandling: If there is an error while saving the object.
-
     """
     try:
         # Creating the directory if it does not exist
@@ -37,20 +37,7 @@ def save_object(obj, file_path):
         raise CustomExceptionHandling(e, sys) from e
 
 
-def evaluate_model(X_train, y_train, X_test, y_test, models):
-    """
-    Evaluate the performance of different models on the given training and testing data.
-
-    Parameters:
-    X_train (array-like): Training data features.
-    y_train (array-like): Training data labels.
-    X_test (array-like): Testing data features.
-    y_test (array-like): Testing data labels.
-    models (dict): Dictionary of models to evaluate, where the keys are model names and the values are model objects.
-
-    Returns:
-    dict: A dictionary containing the model names as keys and the corresponding R-squared scores on the testing data as values.
-    """
+def evaluate_model(X_train, y_train, X_test, y_test, models, params):
     try:
         # Creating a dictionary to store the model names and their R-squared scores
         report = {}
@@ -58,9 +45,15 @@ def evaluate_model(X_train, y_train, X_test, y_test, models):
         for i in range(len(list(models))):
             # Fitting the model on the training data
             model = list(models.values())[i]
-            model.fit(X_train, y_train)
+            param = params[list(params.keys())[i]]
 
-            # Predicting the labels for the training and testing data
+            # Creating a grid search object and fitting it on the training data
+            grid_search = GridSearchCV(model, param, scoring="r2", cv=5)
+            grid_search.fit(X_train, y_train)
+            model.set_params(**grid_search.best_params_)
+
+            # Fitting the model on the training data and making prediction for train and test data
+            model.fit(X_train, y_train)
             y_train_pred = model.predict(X_train)
             y_test_pred = model.predict(X_test)
 

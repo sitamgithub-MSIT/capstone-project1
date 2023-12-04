@@ -38,6 +38,18 @@ def save_object(obj, file_path):
 
 
 def evaluate_model(X_train, y_train, X_test, y_test, models, params):
+    """
+    Evaluate the performance of different models on the given training and testing data.
+    Parameters:
+    X_train (array-like): Training data features.
+    y_train (array-like): Training data labels.
+    X_test (array-like): Testing data features.
+    y_test (array-like): Testing data labels.
+    models (dict): Dictionary of models to evaluate, where the keys are model names and the values are model objects.
+    params (dict): Dictionary of model parameters, where the keys are model names and the values are parameter grids.
+    Returns:
+    dict: A dictionary containing the model names as keys and the corresponding R-squared scores on the testing data as values.
+    """
     try:
         # Creating a dictionary to store the model names and their R-squared scores
         report = {}

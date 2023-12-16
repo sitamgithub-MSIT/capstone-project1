@@ -6,3 +6,4 @@ scikit-learn
 catboost
 xgboost
 feature-engine
+fastapi[all]

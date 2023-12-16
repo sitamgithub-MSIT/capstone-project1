@@ -1,0 +1,83 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Charges Prediction</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h1 {
+            color: #fff;
+            text-align: center;
+            margin-top: 0;
+        }
+
+        p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .cta-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .cta-button {
+            background-color: #45a049;
+            color: #fff;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            text-decoration: none;
+        }
+
+        .cta-button:hover {
+            background-color: #4caf50;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to Medical Charges Prediction</h1>
+    </header>
+    <div class="container">
+        <p>Empower your healthcare decisions with our <strong>Medical Charges Prediction app</strong>! Enter your
+            <strong>information</strong>, and we'll provide <strong>estimates</strong> for your <strong>medical
+                charges</strong> based on <strong>Machine
+                Learning Algorithms</strong>.
+        </p>
+
+        <div class="cta-container">
+            <a href="{{ url_for('predict_data')}}" class="cta-button">Get Started</a>
+        </div>
+    </div>
+</body>
+
+</html>

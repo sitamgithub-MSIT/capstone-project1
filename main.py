@@ -1,15 +1,24 @@
 # Required imports
+import os
 import numpy as np
 import pandas as pd
+from dotenv import load_dotenv
 from flask import Flask, request, render_template
+from flask_cors import CORS
 
 # Local Imports
 from sklearn.preprocessing import StandardScaler
 from src.pipeline.predict_pipeline import CustomData, PredictPipeline
 
-# Creating the application
+load_dotenv()
+
+# Creating the application and enabling CORS
 application = Flask(__name__)
 app = application
+CORS(app)
+
+# Environment variables for the application configuration settings
+app.config["DEBUG"] = os.environ.get("FLASK_DEBUG")
 
 
 @app.route("/")
@@ -56,4 +65,4 @@ def predict_data():
 
 # Run the application
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8000, debug=True)
+    app.run()

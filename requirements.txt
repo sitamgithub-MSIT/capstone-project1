@@ -5,5 +5,9 @@ matplotlib
 scikit-learn
 catboost
 xgboost
-feature-engine
-fastapi[all]
+python-dotenv
+Flask
+Flask-Cors
+gunicorn
+
+# -e .

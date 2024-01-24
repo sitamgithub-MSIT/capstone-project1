@@ -1,0 +1,76 @@
+Random Forest Regressor
+Model performance for Training set
+- Root Mean Squared Error: 1882.1778
+- Mean Absolute Error: 1024.8840
+- R2 Score: 0.9755
+----------------------------------
+Model performance for Test set
+- Root Mean Squared Error: 4631.7216
+- Mean Absolute Error: 2511.4326
+- R2 Score: 0.8618
+===================================
+
+
+XGBRegressor
+Model performance for Training set
+- Root Mean Squared Error: 919.7656
+- Mean Absolute Error: 499.3392
+- R2 Score: 0.9941
+----------------------------------
+Model performance for Test set
+- Root Mean Squared Error: 4824.0411
+- Mean Absolute Error: 2792.4773
+- R2 Score: 0.8501
+===================================
+
+
+CatBoosting Regressor
+Model performance for Training set
+- Root Mean Squared Error: 2715.0659
+- Mean Absolute Error: 1527.7571
+- R2 Score: 0.9489
+----------------------------------
+Model performance for Test set
+- Root Mean Squared Error: 4516.6431
+- Mean Absolute Error: 2547.8595
+- R2 Score: 0.8686
+===================================
+
+
+AdaBoost Regressor
+Model performance for Training set
+- Root Mean Squared Error: 4831.4692
+- Mean Absolute Error: 3774.9868
+- R2 Score: 0.8383
+----------------------------------
+Model performance for Test set
+- Root Mean Squared Error: 5041.9299
+- Mean Absolute Error: 3979.5565
+- R2 Score: 0.8363
+===================================
+
+
+Gradient Boosting Regressor
+Model performance for Training set
+- Root Mean Squared Error: 3836.0650
+- Mean Absolute Error: 2101.3617
+- R2 Score: 0.8980
+----------------------------------
+Model performance for Test set
+- Root Mean Squared Error: 4352.1645
+- Mean Absolute Error: 2447.1672
+- R2 Score: 0.8780
+===================================
+
+
+SVR
+Model performance for Training set
+- Root Mean Squared Error: 12561.3582
+- Mean Absolute Error: 8249.4128
+- R2 Score: -0.0932
+----------------------------------
+Model performance for Test set
+- Root Mean Squared Error: 12880.3949
+- Mean Absolute Error: 8606.9855
+- R2 Score: -0.0686
+===================================

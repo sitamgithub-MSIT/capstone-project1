@@ -1,4 +1,4 @@
-# MedHelp: A Machine Learning Model for Predicting Medical Costs
+# MedHelp: A Machine Learning application for predicting medical costs
 
 This repository contains the ML ZoomCamp Capstone Project 1, which focuses on developing a machine learning model to predict medical costs for individuals based on various factors such as age, BMI, smoking status, and region. The project aims to provide accurate predictions for insurance companies to estimate premiums and individuals to make informed healthcare decisions.
 
@@ -14,7 +14,7 @@ The project is organized as follows:
 
 - `assets/`: This directory contains the screenshots of the web application for testing and cloud deployment. Also EDA and model training results are available in this folder.
 
-- `notebooks/`: This directory contains the Jupyter notebooks for data preprocessing, feature engineering, model selection, and performance evaluation.
+- `notebook/`: This directory contains the Jupyter notebooks for data preprocessing, feature engineering, model selection, and performance evaluation.
 
   - `1. EDA INSURANCE.ipynb`: This notebook contains the code for exploratory data analysis.
   - `2. MODEL TRAINING.ipynb`: This notebook contains the code for feature engineering and model training.
@@ -42,6 +42,7 @@ The project is organized as follows:
 - `test_app.py`: This file contains the tests for the Flask web application using the `pytest`. It contains tests for the home page and the prediction page.
 - `Dockerfile`: This file contains the instructions for building the Docker image for the project.
 - `requirements.txt`: This file contains the list of Python dependencies for the project. It can be used to install the dependencies using the `pip` package manager.
+- `requirements-test.txt`: This file contains the list of Python dependencies for testing the project. It can be used to install the dependencies using the `pip` package manager.
 - `setup.py`: This file contains the instructions for installing the project as a Python package.
 - `README.md`: This file provides an overview of the project and its structure.
 
@@ -50,7 +51,7 @@ The project is organized as follows:
 To get started with the project, without too much hassle, follow these steps (not ordered necessarily):
 
 1. Visit the repository: `git clone https://github.com/sitamgithub-MSIT/capstone-project1.git`
-2. Under notebooks folder, you will find the `1. EDA INSURANCE.ipynb` and `2. MODEL TRAINING.ipynb` notebooks. These notebooks contain the code for data preprocessing, feature engineering, model selection, hyperparameter tuning, and performance evaluation.
+2. Under notebook folder, you will find the `1. EDA INSURANCE.ipynb` and `2. MODEL TRAINING.ipynb` notebooks. These notebooks contain the code for data preprocessing, feature engineering, model selection, hyperparameter tuning, and performance evaluation.
 3. Run those notebooks to perform EDA and model training and evaluation. Google Colab can be used to run the notebooks. CPU configuration is sufficient to run the notebooks.
 4. Just upload the notebooks to Google Colab and run them in the Colab environment.
 5. Make sure to upload the dataset to the Colab environment. Also, don't forget to change the path of the dataset in the notebooks.
@@ -111,7 +112,7 @@ To test the deployed service locally, follow these steps:
 
 ## Model Training and Evaluation
 
-The model training and evaluation process is documented in the Jupyter notebooks in the `notebooks/` directory. These notebooks provide step-by-step instructions on data preprocessing, feature engineering, model selection, hyperparameter tuning, and performance evaluation. Then those notebooks are converted to the python scripts and placed in the `src/components/` directory. The `train_pipeline.py` file is used to train the pipeline. The `predict_pipeline.py` file is used to make predictions using the trained model.
+The model training and evaluation process is documented in the Jupyter notebooks in the `notebook/` directory. These notebooks provide step-by-step instructions on data preprocessing, feature engineering, model selection, hyperparameter tuning, and performance evaluation. Then those notebooks are converted to the python scripts and placed in the `src/components/` directory. The `train_pipeline.py` file is used to train the pipeline. The `predict_pipeline.py` file is used to make predictions using the trained model.
 
 ## Results
 

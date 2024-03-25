@@ -1,6 +1,6 @@
 # MedHelp: A Machine Learning application for predicting medical costs
 
-This repository contains the ML ZoomCamp Capstone Project 1, which focuses on developing a machine learning model to predict medical costs for individuals based on various factors such as age, BMI, smoking status, and region. The project aims to provide accurate predictions for insurance companies to estimate premiums and individuals to make informed healthcare decisions.
+This repository contains the ML ZoomCamp Capstone Project 1, which focuses on developing a machine-learning model to predict medical costs for individuals based on various factors such as age, BMI, smoking status, and region. The project aims to provide accurate predictions for insurance companies to estimate premiums and for individuals to make informed healthcare decisions.
 
 ## Dataset
 
@@ -12,7 +12,7 @@ The project is organized as follows:
 
 - `artifacts/`: This directory contains the serialized model and the data preprocessing objects as pickle files named `training_model.pkl`, and `preprocessor.pkl` respectively.
 
-- `assets/`: This directory contains the screenshots of the web application for testing and cloud deployment. Also EDA and model training results are available in this folder.
+- `assets/`: This directory contains the screenshots of the web application for testing and cloud deployment. Also, EDA and model training results are available in this folder.
 
 - `notebook/`: This directory contains the Jupyter notebooks for data preprocessing, feature engineering, model selection, and performance evaluation.
 
@@ -28,7 +28,7 @@ The project is organized as follows:
     - `model_training.py`: This file contains the code for model training, hyperparameter tuning, and performance evaluation.
   - `pipeline/`: This directory contains the code for the project's pipeline definition. Each pipeline is defined in a separate file. The pipelines are:
     - `train_pipeline.py`: This file should be used for pipeline training. Currently, it is empty and should be filled with the appropriate code.
-    - `predict_pipeline.py`: This file contains the code for the prediction pipeline. It loads the serialized model and the data preprocessing objects and uses them to make predictions. Also, it contains custom data class for the prediction request.
+    - `predict_pipeline.py`: This file contains the code for the prediction pipeline. It loads the serialized model and the data preprocessing objects and uses them to make predictions. Also, it contains a custom data class for the prediction request.
   - `exception.py`: This file contains the custom exceptions for the project.
   - `logger.py`: This file contains the code for logging.
   - `utils.py`: This file contains the utility functions for the project.
@@ -51,11 +51,11 @@ The project is organized as follows:
 To get started with the project, without too much hassle, follow these steps (not ordered necessarily):
 
 1. Visit the repository: `git clone https://github.com/sitamgithub-MSIT/capstone-project1.git`
-2. Under notebook folder, you will find the `1. EDA INSURANCE.ipynb` and `2. MODEL TRAINING.ipynb` notebooks. These notebooks contain the code for data preprocessing, feature engineering, model selection, hyperparameter tuning, and performance evaluation.
+2. Under the notebook folder, you will find the `1. EDA INSURANCE.ipynb` and `2. MODEL TRAINING.ipynb` notebooks. These notebooks contain the code for data preprocessing, feature engineering, model selection, hyperparameter tuning, and performance evaluation.
 3. Run those notebooks to perform EDA and model training and evaluation. Google Colab can be used to run the notebooks. CPU configuration is sufficient to run the notebooks.
 4. Just upload the notebooks to Google Colab and run them in the Colab environment.
 5. Make sure to upload the dataset to the Colab environment. Also, don't forget to change the path of the dataset in the notebooks.
-6. Install the required dependencies using the `requirements.txt` file in colab environment.
+6. Install the required dependencies using the `requirements.txt` file in the colab environment.
 7. Happy notebooking!
 
 ## Dependencies
@@ -87,17 +87,17 @@ Now, open up your local host and you should see the web application running. For
 
 ## Deployment
 
-**Containerization**: The project is containerized using Docker. The Docker image is built using the `Dockerfile` in the project's root directory. That configuration file contains the instructions for building the Docker image while deploying the service in the cloud. Currently, only Google Cloud Platform (GCP) is tested for docker image deployment. Other cloud platforms not sure about the deployment. Alos, one can run the docker image locally with their preferences and own configurations. For more follow the instructions in the blog post [here](https://dev.to/pavanbelagatti/a-step-by-step-guide-to-containerizing-and-deploying-machine-learning-models-with-docker-21al).
+**Containerization**: The project is containerized using Docker. The Docker image is built using the `Dockerfile` in the project's root directory. That configuration file contains the instructions for building the Docker image while deploying the service in the cloud. Currently, only Google Cloud Platform (GCP) is tested for docker image deployment. Other cloud platforms are not sure about the deployment. Also, one can run the docker image locally with their preferences and own configurations. For more follow the instructions in the blog post [here](https://dev.to/pavanbelagatti/a-step-by-step-guide-to-containerizing-and-deploying-machine-learning-models-with-docker-21al).
 
 **Google Cloud Platform (GCP)**: The project is deployed on the Google Cloud Platform (GCP) using the Cloud Run service. The Docker image is deployed on the Cloud Run service. To deploy the service to Google Cloud, a very brief overview of some of the steps is provided below:
 
 - Sign up for a Google Cloud account.
 - Set up a project and enable the necessary APIs (Create a new project in the Google Cloud Console.
   Enable the required APIs, such as Cloud Run and Artifact Registry, through the Console.)
-- Deploy the Docker image to Google Cloud Run. (Build and push your Docker image to Google Artifact Registry or another container registry. Deploy the image to Cloud Run by specifying the necessary configurations.)
+- Deploy the Docker image to Google Cloud Run. (Build and push your Docker image to the Google Artifact Registry or another container registry. Deploy the image to Cloud Run by specifying the necessary configurations.)
 - Access the service using the provided URL. (Once deployed, a URL is provided to access the service. Use the URL to access the service.)
 
-For detailed instructions and code examples, please refer to the blog post [here](https://lesliemwubbel.com/setting-up-a-flask-app-and-deploying-it-via-google-cloud/). The blog post should be sufficient to get you started with deploying the service on GCP. Also, refer to the screenshots in the assets folder for deployment results of this project.
+For detailed instructions and code examples, please refer to the blog post [here](https://lesliemwubbel.com/setting-up-a-flask-app-and-deploying-it-via-google-cloud/). The blog post should be sufficient to get you started with deploying the service on GCP. Also, refer to the screenshots in the assets folder for the deployment results of this project.
 
 ## Testing
 
@@ -112,11 +112,11 @@ To test the deployed service locally, follow these steps:
 
 ## Model Training and Evaluation
 
-The model training and evaluation process is documented in the Jupyter notebooks in the `notebook/` directory. These notebooks provide step-by-step instructions on data preprocessing, feature engineering, model selection, hyperparameter tuning, and performance evaluation. Then those notebooks are converted to the python scripts and placed in the `src/components/` directory. The `train_pipeline.py` file is used to train the pipeline. The `predict_pipeline.py` file is used to make predictions using the trained model.
+The model training and evaluation process is documented in the Jupyter notebooks in the `notebook/` directory. These notebooks provide step-by-step instructions on data preprocessing, feature engineering, model selection, hyperparameter tuning, and performance evaluation. Then those notebooks are converted to the Python scripts and placed in the `src/components/` directory. The `train_pipeline.py` file is used to train the pipeline. The `predict_pipeline.py` file is used to make predictions using the trained model.
 
 ## Results
 
-The trained model, with hyperparameter tuning, achieved an accuracy of 89% on the test set. Various models were trained and evaluated, and the best model was selected based on the performance metrics. Various performance metrics results were shown in the notebook such as Mean Absolute Error (MAE), Mean Squared Error (MSE), Root Mean Squared Error (RMSE), and R-squared (R2). The best model was selected based on the evaluation of R2 score metric. Model was then serialized and saved as a pickle file. The data preprocessing object was also serialized and saved as pickle files. The serialized model and the data preprocessing object are available in the `artifacts/` directory. Further that was applied in prediction pipeline conecting with Flask app.
+The trained model, with hyperparameter tuning, achieved an accuracy of 89% on the test set. Various models were trained and evaluated, and the best model was selected based on the performance metrics. Various performance metrics results were shown in the notebook such as Mean Absolute Error (MAE), Mean Squared Error (MSE), Root Mean Squared Error (RMSE), and R-squared (R2). The best model was selected based on the evaluation of the R2 score metric. The model was then serialized and saved as a pickle file. The data preprocessing object was also serialized and saved as pickle files. The serialized model and the data preprocessing object are available in the `artifacts/` directory. Further, that was applied in the prediction pipeline connected with the Flask app.
 
 Note: For models, some of them are overfitting but Gradient Boosting Regressor does not overfit and gives the best result.
 
